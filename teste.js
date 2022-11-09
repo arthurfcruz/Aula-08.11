@@ -1,9 +1,19 @@
 let nome = []
 let senha = []
+let index = []
 
 function cadastrar(){
     nome = prompt('digite seu nome para cadastro')
     senha = prompt('digite uma senha para cadastro')
+}
+
+function fazerLogin(nome,senha){
+    for (let index = 0; index < nome.length; index++) {
+        if (nome == nome[index] && senha == senha[index]) {
+            return true
+        }else 
+        return false
+    }
 }
 
 function oQueFazer(){
@@ -17,7 +27,12 @@ do {switch (fazer) {
             oQueFazer()
             break;
         case "2":
-            fazerLogin()  
+            fazerLogin(nome,senha)  
+            if (true) {
+                console.log('login feito com sucesso')
+            }else if (false) {
+                console.log ('usuario ou senha incorrretos')
+            }
             oQueFazer()
             break;
         case "3":
@@ -32,3 +47,5 @@ do {switch (fazer) {
         break;
     }
 } while (continuar == 's');
+
+//indexof slice
